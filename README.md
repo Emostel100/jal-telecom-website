@@ -2,7 +2,11 @@
 
 A custom, responsive English corporate website for a telecommunications company in Luanda, Angola. Built with semantic HTML, modern CSS and small progressive JavaScript enhancements. No runtime framework or package dependencies.
 
-**Live client preview:** https://jal-telecom-preview.scenichippo.chatgpt.site
+**Client domain:** https://jaltelecom.com
+
+**Hostinger preview:** https://preview.jaltelecom.com
+
+**Alternate review preview:** https://jal-telecom-preview.scenichippo.chatgpt.site
 
 **Source:** https://github.com/Emostel100/jal-telecom-website
 
@@ -43,7 +47,7 @@ The form prepares a message locally. It does not send email or claim successful 
 
 Contact details, leadership names, brand colours and supplied photographs came from the project brief. Service categories came from the supplied branding sheet. Service descriptions are draft copy for business review. No unverified customer logos, statistics, testimonials, accreditations or project outcomes are included. Field photographs do not establish a named project contract or endorsement.
 
-The cinematic hero is an original AI-created conceptual illustration made with the built-in ImageGen tool. It is not a JAL project photograph. The supplied branding sheet is displayed through a CSS viewport for the header logo; a clean transparent SVG/PNG from the company should replace it later. The favicon is an interim code-drawn J motif.
+The cinematic hero is an original AI-created conceptual illustration made with the built-in ImageGen tool. It is not a JAL project photograph. The approved satellite-dish identity is now used in the header, footer and network illustration. A matching SVG dish favicon is included. Two field photographs have AI-assisted uniform-logo replacements; source photographs remain preserved outside the public asset set. Leadership portraits retain their supplied appearance and are responsively cropped, with a reserved third portrait. Image edit prompts and provenance are recorded in assets-updated/IMAGE-EDIT-RECORD.json.
 
 The company's photographs and branding remain the property of their respective rights holders. Do not reuse them as an open-source asset library. This portfolio implementation does not grant third-party branding or photo rights.
 
@@ -52,7 +56,7 @@ The company's photographs and branding remain the property of their respective r
 The preview intentionally includes `noindex, nofollow` and a disallow-all `robots.txt`. Before the final company launch:
 
 1. Confirm all service wording, address spelling, leadership details and image permissions with the client.
-2. Replace the logo sheet with a clean approved logo asset and confirm the favicon.
+2. Add the remaining leadership portrait and approved biographies, project stories and credentials.
 3. Set `SITE_ORIGIN` to the final domain, remove preview indexing restrictions and rebuild.
 4. Configure hosting to serve `dist/` and use `404.html` for missing pages.
 5. Verify the company's existing email DNS and mail-client settings before changing any website DNS. Preserve the existing email service.
@@ -66,3 +70,15 @@ This is a portable static website. Upload the contents of `dist/` to the selecte
 ## Portfolio focus
 
 The work demonstrates original visual direction, brand interpretation, information architecture, responsive frontend implementation, accessible interactions, progressive enhancement, content modelling and static delivery. The portfolio should describe the work as a preview/MVP until the company approves the content and launches the final site.
+
+## November refinement
+
+- Home link and active navigation state on desktop and mobile.
+- Approved logo, natural-looking uniform rebranding and optimized WebP photography.
+- General Manager Jalloh Muhammed and Executive Director Afonso Lopes Narciso portraits; Technical Supervisor Pedro Lussasse portrait reserved. No biographies invented.
+- Consistent asymmetric photo curves, frames, button variants and restrained signal rings.
+- Once-per-visit scroll reveals, staggered cards, active network routes and drawn process lines.
+- Pause motion control, operating-system reduced-motion support and static fallback.
+- Footer clearance, safe-area spacing, keyboard-aware WhatsApp visibility and phone-friendly form inputs.
+
+See UPDATE-2026-11-08.md for scope and verification limits. Hostinger maintenance is controlled by the existing maintenance.flag file; routine update archives omit flag files to preserve its current state.

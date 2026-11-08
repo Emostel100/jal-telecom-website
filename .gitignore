@@ -7,3 +7,7 @@ node_modules/
 !.env.example
 work/
 *.log
+
+# High-resolution image editing intermediates are retained locally.
+assets-updated/jal-team-rebranded.png
+assets-updated/jal-engineer-rebranded.png

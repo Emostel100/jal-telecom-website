@@ -1,0 +1,22 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-11-08",
+  "assets": [
+    {
+      "file": "jal-logo-approved.png",
+      "source": "approved top flat logo from jal-logo-refinement-concept-01.png",
+      "prompt": "Use case: logo-brand. Input image is approved JAL TELECOM concept sheet. Extract and faithfully clean ONLY the upper flat primary logo, preserving its exact approved design: tilted satellite dish on pedestal at left, circular feed end and diagonal arm, navy/cyan dish, cyan and orange signal arcs, bold navy uppercase JAL right and tracked TELECOM underneath. One single standalone flat logo, no duplicate, no 3D version, no background, genuine transparent alpha. Keep geometry, relative proportions and text identical to upper approved logo. All white negative-space holes genuinely transparent. Flat solid navy #0B3D91, cyan #00AEEF, orange #FF7A00, no gradient, shadow, border, framing, watermarks or extra wording. Large crisp centred horizontal lockup with minimal transparent margin; retain all parts uncropped."
+    },
+    {
+      "file": "jal-team-rebranded.png",
+      "source": "jal-team.jpeg / original G1.jpeg",
+      "prompt": "Use case: precise-object-edit, identity-preserve. Image 1 is the PHOTO TO EDIT, image 2 is the approved JAL TELECOM LOGO REFERENCE. Make a meticulous minimal photographic retouch only to existing company branding on workwear/helmets. Replace visible old company/JAL/Mecgulf badges with the approved satellite-dish JAL TELECOM mark from image 2. Use white JAL TELECOM lettering on dark vests, navy lettering on pale helmets, cyan dish and tiny orange signal arc. Correct scale, perspective, fabric folds, light, thread/print texture and wear; natural small logos, not giant promotional patches. Preserve EXACT people, faces, skin, expressions, poses, anatomy, clothing design, safety equipment, number of people, setting, composition, tower geometry, vehicles and lighting. Do not beautify faces or redraw scene. Do not add equipment or remove existing objects. Retain original framing and aspect ratio. Output edited photograph only, no comparison or captions. For this group photograph replace old JAL vest chest logos and helmet logos throughout the group. Preserve each of the fifteen men's unique identity and every face. If a badge is too tiny to read, keep it tiny and natural rather than inventing detail."
+    },
+    {
+      "file": "jal-engineer-rebranded.png",
+      "source": "jal-engineer.jpeg / original s3.jpeg",
+      "prompt": "Use case: precise-object-edit, identity-preserve. Image 1 is the PHOTO TO EDIT, image 2 is the approved JAL TELECOM LOGO REFERENCE. Make a meticulous minimal photographic retouch only to existing company branding on workwear/helmets. Replace visible old company/JAL/Mecgulf badges with the approved satellite-dish JAL TELECOM mark from image 2. Use white JAL TELECOM lettering on dark vests, navy lettering on pale helmets, cyan dish and tiny orange signal arc. Correct scale, perspective, fabric folds, light, thread/print texture and wear; natural small logos, not giant promotional patches. Preserve EXACT people, faces, skin, expressions, poses, anatomy, clothing design, safety equipment, number of people, setting, composition, tower geometry, vehicles and lighting. Do not beautify faces or redraw scene. Do not add equipment or remove existing objects. Retain original framing and aspect ratio. Output edited photograph only, no comparison or captions. For this portrait field photograph replace only the old JAL badge centred on the smiling foreground engineer's red helmet with the approved logo on the same small white helmet sticker. Leave his green shirt and safety harness, his natural face and all background untouched. Any visible company mark on background worker should be updated unobtrusively if readable."
+    }
+  ],
+  "notes": "Originals preserved. Only two currently used photos have clearly visible company marks. Output branding is a visual retouch, not evidence of historic project ownership. Review before publish."
+}
