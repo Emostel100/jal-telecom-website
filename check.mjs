@@ -31,7 +31,7 @@ for(const file of files){
  const structured=[...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)];
  for(const m of structured)JSON.parse(m[1]);
 }
-assert.equal(files.length,14,'13 content pages plus 404');
+assert.equal(files.length,21,'20 content pages plus 404');
 const app=await readFile('app.js','utf8');
 assert.ok(!/localStorage|sessionStorage|fetch\(/.test(app),'enquiries must stay on device until an external send action');
 console.log(`PASS: ${files.length} HTML pages, ${references} local references, anchors, image alternatives, unique IDs, metadata and structured data.`);

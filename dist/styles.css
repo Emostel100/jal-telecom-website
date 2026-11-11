@@ -98,3 +98,25 @@ body.modal-open .floating-contact,body.menu-open .floating-contact,body.input-fo
 .container{padding-left:max(var(--gutter),env(safe-area-inset-left,0px));padding-right:max(var(--gutter),env(safe-area-inset-right,0px))}
 @media(hover:hover){.js-motion .service-card.visible:hover{transform:translateY(-5px)}}
 @media(max-width:720px){.service-card p{font-size:12px}.people-copy p{font-size:14px}.gallery-disclaimer{font-size:11px}.service-scope-note{font-size:12px}.contact-method address{font-size:13px}}
+
+/* November field and leadership update */
+.hero-scene.hero-team img{object-fit:contain;object-position:center;width:67%;transform:none}
+.hero-scene.hero-team:after{background:linear-gradient(90deg,#05172f 28%,#05172f90 50%,transparent 77%),linear-gradient(0deg,#05172fb0,transparent 32%)}
+.leader-portrait{height:auto;aspect-ratio:4/4.5}
+.leader-portrait img{object-position:50% 34%;display:block}
+.people-band .people-photo{object-position:42% 38%}
+.gallery-item[data-framing=people] .gallery-visual{background:#edf3f8}
+.gallery-item[data-framing=people] .gallery-visual img{object-fit:contain;object-position:center}
+.gallery-story{display:block;color:#53677e;font-size:.85rem;line-height:1.5;margin-top:.55rem;max-width:44ch}
+.client-section{background:#f4f8fb}
+.partner-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;list-style:none;padding:0;margin:0;max-width:710px}
+.partner-mark{display:grid;place-items:center;min-height:146px;background:#fff;border:1px solid #e4ecf3;border-radius:18px}
+.partner-mark img{width:min(72%,240px);max-height:86px;object-fit:contain}
+.partner-africell{background:#972a7e;border-color:#972a7e}
+.partner-africell img{width:min(64%,180px);height:120px;max-height:120px;object-fit:contain}
+@media(max-width:760px){
+ .hero-scene.hero-team img{width:100%;object-position:center 73%}
+ .hero-scene.hero-team:after{background:linear-gradient(180deg,#05172f 8%,#05172fd6 35%,#05172f75 70%,#05172f)}
+ .scene-controls{gap:6px}.scene-dots{gap:2px}.scene-label{max-width:100px}
+ .partner-grid{gap:12px}.partner-mark{min-height:112px}.partner-africell img{max-height:100px}
+}

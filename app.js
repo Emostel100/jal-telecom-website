@@ -34,10 +34,10 @@ if(!reduceMotion.matches&&'IntersectionObserver' in window){
 const scenes=[...document.querySelectorAll('.hero-scene')];
 if(scenes.length){
   const dots=[...document.querySelectorAll('[data-scene]')],pause=document.querySelector('.scene-pause'),sceneLabel=document.querySelector('#scene-label');
-  const names=['01 — SITE INFRASTRUCTURE','02 — CONNECTED SYSTEMS','03 — PEOPLE & EXPERTISE'];
+  const names=scenes.map(scene=>scene.dataset.label);
   let active=0,userPaused=motionDisabled(),timer;
   const show=i=>{active=i;scenes.forEach((el,j)=>el.classList.toggle('active',i===j));dots.forEach((el,j)=>el.setAttribute('aria-pressed',String(i===j)));sceneLabel.textContent=names[i];};
-  const sync=()=>{clearInterval(timer);pause.setAttribute('aria-pressed',String(userPaused));pause.setAttribute('aria-label',userPaused?'Play background transitions':'Pause background transitions');pause.firstElementChild.textContent=userPaused?'▶':'Ⅱ';if(!userPaused&&!motionDisabled()&&!document.hidden)timer=setInterval(()=>show((active+1)%scenes.length),8500);};
+  const sync=()=>{clearInterval(timer);pause.setAttribute('aria-pressed',String(userPaused));pause.setAttribute('aria-label',userPaused?'Play background transitions':'Pause background transitions');pause.firstElementChild.textContent=userPaused?'▶':'Ⅱ';if(!userPaused&&!motionDisabled()&&!document.hidden)timer=setInterval(()=>show((active+1)%scenes.length),6500);};
   dots.forEach((dot,i)=>dot.addEventListener('click',()=>{show(i);userPaused=true;sync();}));
   pause.addEventListener('click',()=>{userPaused=!userPaused;sync();});
   document.addEventListener('visibilitychange',sync);
@@ -51,12 +51,12 @@ document.querySelectorAll('[data-node]').forEach(button=>button.addEventListener
 
 const dialog=document.querySelector('#photo-dialog');
 if(dialog){let opener;const close=()=>{dialog.close();document.body.classList.remove('modal-open');opener?.focus();};
- document.querySelectorAll('[data-gallery]').forEach(button=>button.addEventListener('click',()=>{opener=button;const img=button.querySelector('img');const display=document.querySelector('#lightbox-image');display.src=img.src;display.alt=img.alt;const caption=document.querySelector('#lightbox-caption');caption.replaceChildren();const strong=document.createElement('strong');strong.textContent=button.querySelector('.gallery-meta small').textContent;caption.append(strong,document.createTextNode('Supplied field photography'));dialog.showModal();document.body.classList.add('modal-open');}));
+ document.querySelectorAll('[data-gallery]').forEach(button=>button.addEventListener('click',()=>{opener=button;const img=button.querySelector('img');const display=document.querySelector('#lightbox-image');display.src=img.src;display.alt=img.alt;const caption=document.querySelector('#lightbox-caption');caption.replaceChildren();const strong=document.createElement('strong');strong.textContent=button.querySelector('.gallery-meta small').textContent;caption.append(strong,document.createTextNode(button.querySelector('.gallery-story')?.textContent||'Supplied field photography'));dialog.showModal();document.body.classList.add('modal-open');}));
  document.querySelector('.lightbox-close')?.addEventListener('click',close);
  dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)close();}});
  dialog.addEventListener('close',()=>{document.body.classList.remove('modal-open');opener?.focus();});
 }
-document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{const filter=button.dataset.filter;document.querySelectorAll('[data-filter]').forEach(el=>el.setAttribute('aria-pressed',String(el===button)));let count=0;document.querySelectorAll('.gallery-item').forEach(el=>{el.hidden=filter!=='all'&&el.dataset.category!==filter;if(!el.hidden){count++;el.classList.add('visible');el.classList.remove('filter-enter');requestAnimationFrame(()=>el.classList.add('filter-enter'));}});document.querySelector('#gallery-count').textContent=`${count} photograph${count===1?'':'s'}`;}));
+document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{const filter=button.dataset.filter;document.querySelectorAll('[data-filter]').forEach(el=>el.setAttribute('aria-pressed',String(el===button)));let count=0;document.querySelectorAll('.gallery-item').forEach(el=>{el.hidden=filter!=='all'&&!el.dataset.category.split(' ').includes(filter);if(!el.hidden){count++;el.classList.add('visible');el.classList.remove('filter-enter');requestAnimationFrame(()=>el.classList.add('filter-enter'));}});document.querySelector('#gallery-count').textContent=`${count} photograph${count===1?'':'s'}`;}));
 
 const form=document.querySelector('#enquiry-form');
 if(form){
