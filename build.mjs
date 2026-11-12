@@ -24,7 +24,7 @@ function processSection(){return `<section class="section process"><div class="c
 
 const heroScenes=[
   ['hero-connectivity.webp','Site infrastructure illustration','SITE INFRASTRUCTURE','',1672,941],
-  ['rooftop-network.jpeg','Rooftop network photograph','CONNECTED SYSTEMS','photo',941,1672],
+  ['rooftop-network-clean.webp','Rooftop network photograph','CONNECTED SYSTEMS','photo',941,1672],
   ['jal-engineer-rebranded.webp','JAL engineer photograph','PEOPLE & EXPERTISE','photo',1200,1200],
   ['jal-leadership-field-wide.webp','Three managers at a tower site','LEADERSHIP IN THE FIELD','photo hero-team',1254,1254],
   ['jal-team-rebranded.webp','Full crew in work jackets','THE JAL FIELD TEAM','photo hero-team',1600,1200],
