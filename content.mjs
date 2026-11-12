@@ -3,15 +3,15 @@ export const company = {
   name: 'JAL TELECOM', tagline: 'Connecting the future.',
   email: 'info@jaltelecom.com', phones: ['+244 936 307 797', '+244 957 365 065'],
   address: 'Rua Fidel de Castro Ruz, Bairro Onjivia, junto à Toyota, Nº S/N, Belas, Luanda, Angola',
-  generalManager: 'Jalloh Muhammed', executiveDirector: 'Pedro Lussasse', technicalDirector: 'Afonso Lopes Narciso',
+  generalManager: 'Jalloh Muhammed', technicalSupervisor: 'Pedro Lussasse', technicalDirector: 'Afonso Lopes Narciso',
 };
 export const services = [
-  {id:'site-infrastructure',number:'01',icon:'tower',name:'Site installation & infrastructure',short:'The foundation of every connection.',description:'Practical site deployment and infrastructure support, bringing together the physical systems that telecommunications networks depend on.',image:'radio-tower.jpeg',alt:'Telecommunications mast with sector antennas',intro:'Strong networks start with the right foundation. We support the installation and integration of telecommunications site infrastructure, with a practical focus on the conditions in the field.',items:['Telecommunications site installation','Tower and antenna installation support','Equipment mounting and site integration','Site preparation and technical coordination'],outcome:'A coordinated approach to getting your site ready for connection.'},
+  {id:'site-infrastructure',number:'01',icon:'tower',name:'Site installation & infrastructure',short:'The foundation of every connection.',description:'Practical site deployment and infrastructure support, bringing together the physical systems that telecommunications networks depend on.',image:'radio-mast-wide.webp',alt:'Telecommunications mast with sector antennas',intro:'Strong networks start with the right foundation. We support the installation and integration of telecommunications site infrastructure, with a practical focus on the conditions in the field.',items:['Telecommunications site installation','Tower and antenna installation support','Equipment mounting and site integration','Site preparation and technical coordination'],outcome:'A coordinated approach to getting your site ready for connection.'},
   {id:'radio-transmission',number:'02',icon:'signal',name:'Radio & transmission',short:'Making the distance disappear.',description:'Installation and integration support for radio equipment, antennas and microwave links that connect network sites.',image:'microwave-equipment.jpeg',alt:'Microwave antenna dishes prepared for installation',intro:'Reliable communication depends on the links between sites. Our radio and transmission work brings hands-on technical support to antenna systems, microwave equipment and the infrastructure that carries the signal.',items:['Radio equipment installation','Microwave antenna assembly','Transmission equipment integration','Technical checks and field support'],outcome:'Connected systems, supported by people who understand the field.'},
   {id:'fibre-optics',number:'03',icon:'fibre',name:'Fibre optic connectivity',short:'Built for the flow of tomorrow.',description:'Fibre optic installation and connectivity support for the physical links behind modern communications.',image:'network-installation.jpeg',alt:'Telecommunications equipment and network connections at a field site',intro:'Fibre is part of the foundation of modern digital infrastructure. We support fibre connectivity requirements as part of a coordinated telecommunications deployment, matching the scope to the needs of your project.',items:['Fibre installation support','Cable routing and connection coordination','Connectivity integration','Project-specific technical assistance'],outcome:'A clear path from your connectivity requirements to field implementation.'},
   {id:'maintenance-support',number:'04',icon:'tool',name:'Maintenance & technical support',short:'Keeping the connection moving.',description:'Hands-on technical assistance, equipment checks and maintenance support for telecommunications infrastructure.',image:'jal-engineer-rebranded.webp',alt:'JAL TELECOM field engineer wearing a branded helmet and safety harness',intro:'The work continues after installation. We provide practical maintenance and technical support to help address equipment issues, coordinate field interventions and support the infrastructure your operations rely on.',items:['Preventive maintenance support','Equipment inspections and checks','Fault investigation assistance','On-site technical interventions'],outcome:'Practical support for the next challenge your network faces.'},
   {id:'enterprise-solutions',number:'05',icon:'network',name:'Enterprise solutions',short:'Technology that works together.',description:'A joined-up approach to business connectivity and telecommunications infrastructure requirements.',image:'radio-equipment.jpeg',alt:'Radio equipment connected with fibre and power cables',intro:'Every organisation has a different connectivity challenge. We work with your team to understand the operational need and define a practical infrastructure approach, bringing together the relevant technical services.',items:['Business connectivity requirements','Infrastructure solution coordination','Equipment integration support','Technical implementation planning'],outcome:'A technical conversation shaped around the way your organisation works.'},
-  {id:'energy-infrastructure',number:'06',icon:'energy',name:'Energy & supporting infrastructure',short:'Supporting what keeps you connected.',description:'Technical coordination for the power and supporting infrastructure involved in telecommunications sites.',image:'rooftop-network.jpeg',alt:'Rooftop telecommunications equipment at sunset',intro:'Connectivity depends on more than the radio. Supporting infrastructure and power requirements need to be considered together with the network equipment. We help coordinate these needs within a clearly defined project scope.',items:['Site infrastructure requirements','Equipment power integration support','Supporting systems coordination','Field implementation assistance'],outcome:'A more complete view of the infrastructure your site needs.'},
+  {id:'energy-infrastructure',number:'06',icon:'energy',name:'Energy & supporting infrastructure',short:'Supporting what keeps you connected.',description:'Technical coordination for the power and supporting infrastructure involved in telecommunications sites.',image:'rooftop-network-clean.webp',alt:'Rooftop telecommunications equipment at sunset',intro:'Connectivity depends on more than the radio. Supporting infrastructure and power requirements need to be considered together with the network equipment. We help coordinate these needs within a clearly defined project scope.',items:['Site infrastructure requirements','Equipment power integration support','Supporting systems coordination','Field implementation assistance'],outcome:'A more complete view of the infrastructure your site needs.'},
   {id:'projects-consulting',number:'07',icon:'plan',name:'Projects & technical consulting',short:'Clarity before the first connection.',description:'Technical planning and project coordination that bring practical field insight into your next deployment.',image:'antenna-integration.jpeg',alt:'Sector antenna equipment being prepared for integration',intro:'Good implementation starts with a clear plan. We bring practical telecommunications field insight to project scoping and coordination, helping your team understand requirements and organise the next steps.',items:['Technical requirements discussions','Deployment scope and planning','Field coordination','Implementation advice and support'],outcome:'A clear scope, practical next steps and a team to talk them through.'},
   ...[
   {
@@ -20,7 +20,7 @@ export const services = [
     "name": "Site construction",
     "short": "Build the foundations for reliable networks.",
     "description": "Telecommunications site construction and preparation for new network infrastructure.",
-    "image": "radio-tower.jpeg",
+    "image": "radio-mast-wide.webp",
     "alt": "Telecommunications tower with mounted antennas",
     "items": [
       "Site preparation",
@@ -88,7 +88,7 @@ export const services = [
     "name": "Radio access network installation",
     "short": "Bring radio access equipment into the field.",
     "description": "Installation of radio access network (RAN) equipment for new sites and upgrades, including antenna and radio equipment swaps.",
-    "image": "antenna-integration.jpeg",
+    "image": "antenna-cabling-wide.webp",
     "alt": "Sector antenna prepared for installation",
     "items": [
       "New RAN equipment installation",
@@ -105,7 +105,7 @@ export const services = [
     "name": "Site colocation",
     "short": "Extend the use of existing infrastructure.",
     "description": "Site colocation work to support new equipment installations on existing telecommunications infrastructure.",
-    "image": "rooftop-network.jpeg",
+    "image": "rooftop-network-clean.webp",
     "alt": "Telecommunications equipment on a rooftop",
     "items": [
       "Existing site assessment",
@@ -137,7 +137,7 @@ export const services = [
 ];
 export const gallery = [
   {
-    "image": "radio-tower.jpeg",
+    "image": "radio-mast-wide.webp",
     "category": "infrastructure people",
     "title": "Above the everyday.",
     "label": "Site infrastructure",
@@ -145,7 +145,8 @@ export const gallery = [
     "story": "A view of the tower, antennas and a member of the crew working at height."
   },
   {
-    "image": "jal-leadership-field.webp",
+    "image": "jal-leadership-field-wide.webp",
+    "framing": "leaders",
     "category": "people",
     "title": "People make the connection.",
     "label": "Our field leadership",
@@ -157,10 +158,12 @@ export const gallery = [
     "category": "transmission",
     "title": "Every detail matters.",
     "label": "Microwave transmission",
-    "alt": "Microwave dishes and mounting equipment prepared on site"
+    "alt": "Microwave dishes and mounting equipment prepared on site",
+    "story": "Microwave dishes and mounting hardware laid out before installation."
   },
   {
-    "image": "rooftop-network.jpeg",
+    "image": "rooftop-network-clean.webp",
+    "framing": "tall",
     "category": "infrastructure",
     "title": "A different perspective.",
     "label": "Rooftop infrastructure",
@@ -176,6 +179,7 @@ export const gallery = [
   },
   {
     "image": "jal-team-rebranded.webp",
+    "framing": "crew",
     "category": "people",
     "title": "The strength of a team.",
     "label": "JAL TELECOM crew",
@@ -198,6 +202,7 @@ export const gallery = [
   },
   {
     "image": "equipment-delivery.webp",
+    "framing": "vehicle",
     "category": "infrastructure",
     "title": "Equipment on the move",
     "label": "Deployment logistics",
@@ -214,6 +219,7 @@ export const gallery = [
   },
   {
     "image": "equipment-loading.webp",
+    "framing": "vehicle",
     "category": "infrastructure people",
     "title": "Ready for transport",
     "label": "Equipment staging",
@@ -222,6 +228,7 @@ export const gallery = [
   },
   {
     "image": "crane-lift.webp",
+    "framing": "tall",
     "category": "infrastructure people",
     "title": "Lifting equipment into position",
     "label": "Site operations",
@@ -230,6 +237,7 @@ export const gallery = [
   },
   {
     "image": "field-arrival.webp",
+    "framing": "arrival",
     "category": "people infrastructure",
     "title": "Arriving on site",
     "label": "Site preparation",
@@ -238,6 +246,7 @@ export const gallery = [
   },
   {
     "image": "crew-harness.webp",
+    "framing": "tall",
     "category": "people",
     "title": "Ready for the climb",
     "label": "Field crew",
@@ -246,6 +255,7 @@ export const gallery = [
   },
   {
     "image": "jal-engineer-rebranded.webp",
+    "framing": "tall",
     "category": "people",
     "title": "The people behind the installation",
     "label": "Field engineer",
@@ -262,6 +272,7 @@ export const gallery = [
   },
   {
     "image": "crew-four.webp",
+    "framing": "crew",
     "category": "people",
     "title": "Four colleagues, one crew",
     "label": "On-site team",
@@ -270,6 +281,7 @@ export const gallery = [
   },
   {
     "image": "radios-staged.webp",
+    "framing": "tall",
     "category": "people transmission",
     "title": "Equipment ready for the next step",
     "label": "Radio preparation",
@@ -278,6 +290,7 @@ export const gallery = [
   },
   {
     "image": "antenna-handling.webp",
+    "framing": "tall",
     "category": "people transmission",
     "title": "Hands-on antenna preparation",
     "label": "Antenna systems",
@@ -286,6 +299,7 @@ export const gallery = [
   },
   {
     "image": "rooftop-crew.webp",
+    "framing": "tall",
     "category": "people transmission",
     "title": "Working above the city",
     "label": "Rooftop crew",
@@ -294,14 +308,16 @@ export const gallery = [
   },
   {
     "image": "rooftop-engineer.webp",
+    "framing": "tall",
     "category": "people",
     "title": "A view from the site",
-    "label": "Field colleague",
-    "alt": "A colleague beside a rooftop cabinet and microwave dish",
-    "story": "A field colleague stands alongside the cabinets and antennas that make up the rooftop installation."
+    "label": "Technical Director",
+    "alt": "Afonso Lopes Narciso beside a rooftop equipment cabinet",
+    "story": "Afonso Lopes Narciso, JAL TELECOM’s Technical Director, stands beside a rooftop equipment cabinet."
   },
   {
     "image": "tower-crew.webp",
+    "framing": "crew",
     "category": "people",
     "title": "Together at the tower",
     "label": "Field team",
@@ -310,6 +326,7 @@ export const gallery = [
   },
   {
     "image": "tower-work-03.webp",
+    "framing": "mast",
     "category": "people infrastructure",
     "title": "On the tower",
     "label": "Tower crew",
@@ -318,6 +335,7 @@ export const gallery = [
   },
   {
     "image": "tower-work-06.webp",
+    "framing": "mast",
     "category": "people infrastructure",
     "title": "Working at height",
     "label": "Tower crew",
@@ -326,6 +344,7 @@ export const gallery = [
   },
   {
     "image": "tower-work-08.webp",
+    "framing": "mast",
     "category": "people infrastructure",
     "title": "At the antenna mount",
     "label": "Tower crew",

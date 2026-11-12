@@ -57,3 +57,7 @@ The branding sheet lists site installation, fibre optics, radio and transmission
 Generated with the built-in ImageGen tool. Prompt: original cinematic telecom mast with microwave dishes above an abstract coastal African city at blue hour, cyan fibre light trails, navy/cyan/orange palette, subject on the right and dark negative space on the left, no text, logos or watermark.
 
 Asset: `dist/assets/hero-connectivity.webp`. The image is illustrative and does not establish a JAL project location.
+
+### Field photography
+
+Fill gallery frames edge to edge on desktop and mobile. Choose each crop around the people and equipment that tell the story, keeping group portraits head to toe and retaining antennas, cables, and crew at height. Extend the surrounding scene when cropping would remove important details. Keep asset edit notes in the delivery report.
