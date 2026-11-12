@@ -332,23 +332,5 @@ export const gallery = [
     "label": "Tower crew",
     "alt": "Worker on a telecommunications tower",
     "story": "A view of field work around the antennas and mounting structure."
-  },
-  {
-    "image": "tower-work-06.webp",
-    "framing": "mast",
-    "category": "people infrastructure",
-    "title": "Working at height",
-    "label": "Tower crew",
-    "alt": "A worker beside tower-mounted radio equipment",
-    "story": "The field crew works around the radio equipment mounted on the tower."
-  },
-  {
-    "image": "tower-work-08.webp",
-    "framing": "mast",
-    "category": "people infrastructure",
-    "title": "At the antenna mount",
-    "label": "Tower crew",
-    "alt": "A worker beside a tower antenna",
-    "story": "A field view of a worker and the antenna structure above ground."
   }
 ];

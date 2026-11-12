@@ -2,7 +2,7 @@ import {readFile,writeFile,mkdir,copyFile,readdir} from 'node:fs/promises';
 import {company,services,gallery} from './content.mjs';
 
 const origin=process.env.SITE_ORIGIN||'https://preview.jaltelecom.com';
-const release='20261112-r4';
+const release='20261112-r5';
 const esc=(s='')=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const paths={tower:'M12 3 4 29m8-26 8 26M7 20h10M5 27h14M9 13h6M12 3v26M23 6a9 9 0 0 1 0 13M26 3a14 14 0 0 1 0 20',signal:'M16 16v13M11 29h10M16 13h.01M10 7a9 9 0 0 0 0 12M22 7a9 9 0 0 1 0 12M6 3a15 15 0 0 0 0 20M26 3a15 15 0 0 1 0 20',fibre:'M8 29V16L3 8m10 21V14L10 3m9 26V14l3-11m2 26V16l5-8M2 5h2m5-4h2m10 0h2m5 4h2',tool:'M19 5a8 8 0 0 0-9 10L3 25a3 3 0 0 0 4 4l10-7A8 8 0 0 0 27 11l-6 6-6-6 6-6Z',network:'M16 4v9M6 24l8-9m12 9-8-9M16 13h.01M3 22h7v7H3Zm19 0h7v7h-7ZM12 2h8v7h-8Z',energy:'m18 2-13 17h10l-2 11 14-18H17l1-10Z',plan:'M8 5H4v25h23V5h-5M11 2h9v7h-9ZM9 16l3 3 5-6m-8 13h13',globe:'M16 2a14 14 0 1 0 0 28 14 14 0 0 0 0-28Zm0 0a28 28 0 0 0 0 28 28 28 0 0 0 0-28ZM2 16h28',menu:'M5 9h22M5 16h22M5 23h22',phone:'M7 3 3 7c0 12 10 22 22 22l4-4-7-6-4 4-9-9 4-4-6-7Z',mail:'M3 6h26v20H3ZM3 7l13 11L29 7',pin:'M26 12c0 8-10 18-10 18S6 20 6 12a10 10 0 0 1 20 0ZM20 12a4 4 0 1 0-8 0 4 4 0 0 0 8 0Z',chat:'M28 15a12 12 0 0 1-17 11L3 29l2-8a12 12 0 1 1 23-6ZM10 11c0 6 5 11 11 11',shield:'m16 2 12 5v8c0 8-12 15-12 15S4 23 4 15V7l12-5ZM10 15l4 4 8-9',people:'M12 14a5 5 0 1 0 0-10 5 5 0 0 0 0 10ZM2 29v-5a10 10 0 0 1 20 0v5M24 5a5 5 0 0 1 0 10m2 6a8 8 0 0 1 4 8'};
 const icon=(name)=>`<svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><path d="${paths[name]||paths.network}"/></svg>`;
