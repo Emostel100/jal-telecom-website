@@ -15,7 +15,7 @@ function translate(value) {
 export function portuguesePage(html, file, origin) {
   const url = `${origin}/pt/${file}`;
   const translated = html.replace(/(<script\b[^>]*>[\s\S]*?<\/script>)|(<[^>]+>)|([^<]+)/g, (token, script, tag, text) => {
-    if (script) return script.replace(/src="(app\.js[^"]*)"/, 'src="../$1"');
+    if (script) return script.replace(/src="((?:app|language)\.js[^"]*)"/, 'src="../$1"');
     if (text) return translate(text);
     let result = tag.replace(/\b(alt|aria-label|placeholder|title|data-label)="([^"]*)"/g, (_, attribute, value) => `${attribute}="${translate(value)}"`);
     if (result.startsWith('<html ')) result = result.replace('lang="en"', 'lang="pt-AO"');

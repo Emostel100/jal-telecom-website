@@ -1,4 +1,4 @@
-import { t, photographCount, localizeValidation } from './locale.js';
+import { t, photographCount, localizeValidation } from './locale.js?v=20261124-language-r2';
 
 // Progressive enhancement: core page content and contact links are static HTML.
 const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)');

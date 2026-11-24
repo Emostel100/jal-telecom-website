@@ -57,4 +57,7 @@ for (const link of document.querySelectorAll('[data-language]')) {
   destination.search = location.search;
   destination.hash = location.hash;
   link.href = destination.href;
+  link.addEventListener('click', () => {
+    try { window.localStorage.setItem('jal-preferred-language', link.dataset.language); } catch {}
+  });
 }
