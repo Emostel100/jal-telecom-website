@@ -2,11 +2,11 @@ import { readdir, readFile, stat } from 'node:fs/promises';
 import path from 'node:path';
 import assert from 'node:assert/strict';
 const root=path.resolve('dist');
-const files=(await readdir(root)).filter(f=>f.endsWith('.html'));
+const files=(await readdir(root,{recursive:true})).filter(f=>f.endsWith('.html')).map(f=>f.replaceAll('\\','/'));
 let references=0;
 for(const file of files){
  const html=await readFile(path.join(root,file),'utf8');
- assert.match(html,/<html lang="en">/,`${file}: language`);
+ assert.ok(html.includes(`<html lang="${file.startsWith("pt/")?"pt-AO":"en"}">`),`${file}: language`);
  assert.equal((html.match(/<h1[ >]/g)||[]).length,1,`${file}: one main heading`);
  assert.match(html,/<main id="main">/,`${file}: main landmark`);
  assert.match(html,/<title>[^<]+<\/title>/,`${file}: title`);
@@ -18,12 +18,12 @@ for(const file of files){
   const ref=match[1].replaceAll('&amp;','&');
   if(/^(https?:|mailto:|tel:|data:)/.test(ref))continue;
   const [pathname,fragment]=ref.split('#');
-  const target=pathname.split('?')[0]||file;
-  const absolute=path.resolve(root,target);
+  const target=pathname.split('?')[0]||path.basename(file);
+  const absolute=path.resolve(root,path.dirname(file),target);
   assert.ok(absolute.startsWith(root+path.sep),`${file}: unsafe path ${ref}`);
   assert.ok((await stat(absolute)).isFile(),`${file}: missing ${ref}`);
   if(fragment&&target.endsWith('.html')){
-   const linked=target===file?html:await readFile(absolute,'utf8');
+   const linked=await readFile(absolute,'utf8');
    assert.ok(linked.includes(`id="${fragment}"`),`${file}: missing anchor ${ref}`);
   }
   references++;
@@ -31,7 +31,7 @@ for(const file of files){
  const structured=[...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)];
  for(const m of structured)JSON.parse(m[1]);
 }
-assert.equal(files.length,21,'20 content pages plus 404');
+assert.equal(files.length,42,'20 content pages plus 404 in both languages');
 const app=await readFile('app.js','utf8');
 assert.ok(!/localStorage|sessionStorage|fetch\(/.test(app),'enquiries must stay on device until an external send action');
 console.log(`PASS: ${files.length} HTML pages, ${references} local references, anchors, image alternatives, unique IDs, metadata and structured data.`);

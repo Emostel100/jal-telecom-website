@@ -82,3 +82,11 @@ The work demonstrates original visual direction, brand interpretation, informati
 - Footer clearance, safe-area spacing, keyboard-aware WhatsApp visibility and phone-friendly form inputs.
 
 See UPDATE-2026-11-08.md for scope and verification limits. Hostinger maintenance is controlled by the existing maintenance.flag file; routine update archives omit flag files to preserve its current state.
+
+## English and Portuguese
+
+English pages remain at the root; Angolan Portuguese pages use `/pt/` with the same filenames. Every page has an equivalent EN/PT link; switching preserves enquiry service parameters and section anchors. Portuguese is authored in `translations/pt.json` and browser interaction messages in `locale.js`. `translate-page.mjs` fails the build for missing visible or accessibility translations. Run `node build.mjs` then `node check.mjs`; both languages are generated from one content source. No automatic translation service or language redirect is used.
+
+Canonical URLs, reciprocal hreflang and sitemap entries cover both languages. Preview noindex/robots restrictions remain in place until final launch. Contact delivery, mailbox setup and domain/email migration are deferred: the form only prepares an email/WhatsApp draft, with no server submission or storage.
+
+Hostinger-only maintenance files are under `hosting/`. Keep the existing `.htaccess` and maintenance flag state. `maintenance.php` selects Portuguese for `/pt/` or `?lang=pt` and English for `?lang=en`; it keeps HTTP 503, Retry-After and noindex headers. These PHP files are not used by the static Sites mirror.
