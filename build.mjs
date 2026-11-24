@@ -33,8 +33,8 @@ const headerPhotos = {
   },
   "fieldwork": {
     "image": "header-fieldwork.webp",
-    "position": "50% 28%",
-    "mobilePosition": "50% 25%"
+    "position": "50% 8%",
+    "mobilePosition": "50% 8%"
   },
   "contact": {
     "image": "header-contact.webp",
