@@ -311,9 +311,9 @@ export const gallery = [
     "framing": "tall",
     "category": "people",
     "title": "A view from the site",
-    "label": "Technical Director",
+    "label": "Technical Director / Project Manager",
     "alt": "Afonso Lopes Narciso beside a rooftop equipment cabinet",
-    "story": "Afonso Lopes Narciso, JAL TELECOM’s Technical Director, stands beside a rooftop equipment cabinet."
+    "story": "Afonso Lopes Narciso, JAL TELECOM’s Technical Director / Project Manager, stands beside a rooftop equipment cabinet."
   },
   {
     "image": "tower-crew.webp",
