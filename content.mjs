@@ -334,3 +334,10 @@ export const gallery = [
     "story": "A view of field work around the antennas and mounting structure."
   }
 ];
+
+// Add future partner marks here; the carousel adapts to the list length.
+export const partnerBrands = [
+  {name:'Nokia',image:'partner-nokia.webp',style:''},
+  {name:'Africell',image:'partner-africell.webp',style:'partner-africell'},
+  {name:'Digis²',image:'partner-digis.webp',style:'partner-digis'},
+];

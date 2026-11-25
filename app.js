@@ -1,9 +1,11 @@
-import { t, photographCount, localizeValidation } from './locale.js?v=20261124-language-r2';
+import { t, photographCount, localizeValidation } from './locale.js?v=20261125-partners-r3';
+import { initPartnerCarousels } from './partners.js?v=20261125-partners-r3';
 
 // Progressive enhancement: core page content and contact links are static HTML.
 const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
 let manualMotionPaused=false;
 const motionDisabled=()=>reduceMotion.matches||manualMotionPaused;
+initPartnerCarousels({t,motionDisabled});
 const motionToggle=document.querySelector('.motion-toggle');
 function updateMotion(){
  document.documentElement.classList.toggle('motion-off',motionDisabled());

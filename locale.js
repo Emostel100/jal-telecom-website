@@ -1,6 +1,9 @@
 export const isPortuguese = document.documentElement.lang.toLowerCase().startsWith('pt');
 
 const portuguese = {
+  'Pause partner carousel': 'Pausar apresentação dos parceiros',
+  'Resume partner carousel': 'Retomar apresentação dos parceiros',
+  'Show partner group': 'Mostrar grupo de parceiros',
   'Pause motion': 'Pausar animações',
   'Motion paused': 'Animações pausadas',
   'Open navigation': 'Abrir menu de navegação',

@@ -1,9 +1,9 @@
 import {readFile,writeFile,mkdir,copyFile,readdir} from 'node:fs/promises';
-import {company,services,gallery} from './content.mjs';
+import {company,services,gallery,partnerBrands} from './content.mjs';
 import { portuguesePage } from './translate-page.mjs';
 
 const origin=process.env.SITE_ORIGIN||'https://preview.jaltelecom.com';
-const release='20261124-language-r2';
+const release='20261125-partners-r3';
 const esc=(s='')=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const paths={tower:'M12 3 4 29m8-26 8 26M7 20h10M5 27h14M9 13h6M12 3v26M23 6a9 9 0 0 1 0 13M26 3a14 14 0 0 1 0 20',signal:'M16 16v13M11 29h10M16 13h.01M10 7a9 9 0 0 0 0 12M22 7a9 9 0 0 1 0 12M6 3a15 15 0 0 0 0 20M26 3a15 15 0 0 1 0 20',fibre:'M8 29V16L3 8m10 21V14L10 3m9 26V14l3-11m2 26V16l5-8M2 5h2m5-4h2m10 0h2m5 4h2',tool:'M19 5a8 8 0 0 0-9 10L3 25a3 3 0 0 0 4 4l10-7A8 8 0 0 0 27 11l-6 6-6-6 6-6Z',network:'M16 4v9M6 24l8-9m12 9-8-9M16 13h.01M3 22h7v7H3Zm19 0h7v7h-7ZM12 2h8v7h-8Z',energy:'m18 2-13 17h10l-2 11 14-18H17l1-10Z',plan:'M8 5H4v25h23V5h-5M11 2h9v7h-9ZM9 16l3 3 5-6m-8 13h13',globe:'M16 2a14 14 0 1 0 0 28 14 14 0 0 0 0-28Zm0 0a28 28 0 0 0 0 28 28 28 0 0 0 0-28ZM2 16h28',menu:'M5 9h22M5 16h22M5 23h22',phone:'M7 3 3 7c0 12 10 22 22 22l4-4-7-6-4 4-9-9 4-4-6-7Z',mail:'M3 6h26v20H3ZM3 7l13 11L29 7',pin:'M26 12c0 8-10 18-10 18S6 20 6 12a10 10 0 0 1 20 0ZM20 12a4 4 0 1 0-8 0 4 4 0 0 0 8 0Z',chat:'M28 15a12 12 0 0 1-17 11L3 29l2-8a12 12 0 1 1 23-6ZM10 11c0 6 5 11 11 11',shield:'m16 2 12 5v8c0 8-12 15-12 15S4 23 4 15V7l12-5ZM10 15l4 4 8-9',people:'M12 14a5 5 0 1 0 0-10 5 5 0 0 0 0 10ZM2 29v-5a10 10 0 0 1 20 0v5M24 5a5 5 0 0 1 0 10m2 6a8 8 0 0 1 4 8'};
 const icon=(name)=>`<svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><path d="${paths[name]||paths.network}"/></svg>`;
@@ -153,7 +153,7 @@ const leaders=[
   [company.technicalSupervisor,'Technical Supervisor','pedro-studio.webp'],
 ];
 function leadership(){return `<div class="leadership">${leaders.map(([name,title,photo])=>`<article class="leader reveal"><div class="leader-portrait"><img src="assets/${photo}" alt="${esc(name)}, ${esc(title)} of JAL TELECOM" width="720" height="900" loading="lazy" decoding="async"></div><div class="leader-details"><small>${esc(title)}</small><h3>${esc(name)}</h3></div></article>`).join('')}</div>`;}
-function partners(){return `<section class="section client-section"><div class="container"><div class="section-top reveal"><div>${label('Clients & partners')}<h2>Working with the industry.</h2></div></div><ul class="partner-grid"><li class="partner-mark reveal"><img src="assets/partner-nokia.webp" alt="Nokia" loading="lazy" decoding="async"></li><li class="partner-mark partner-africell reveal"><img src="assets/partner-africell.webp" alt="Africell" loading="lazy" decoding="async"></li></ul></div></section>`;}
+function partners(){return `<section class="section client-section"><div class="container partner-carousel" data-partner-carousel role="region" aria-label="Clients and partners"><div class="section-top reveal"><div>${label('Clients & partners')}<h2>Working with the industry.</h2></div><div class="partner-controls" hidden><span class="partner-counter" aria-hidden="true">01 / 02</span><button type="button" data-partner-previous aria-label="Previous partners" aria-controls="partner-track"><span aria-hidden="true">‹</span></button><button type="button" data-partner-next aria-label="Next partners" aria-controls="partner-track"><span aria-hidden="true">›</span></button><button type="button" data-partner-pause aria-label="Pause partner carousel" aria-pressed="false"><span aria-hidden="true">Ⅱ</span></button></div></div><ul class="partner-track" id="partner-track" tabindex="0" aria-label="Partner logos">${partnerBrands.map(partner=>`<li class="partner-mark ${partner.style}"><img src="assets/${partner.image}" alt="${esc(partner.name)}" loading="lazy" decoding="async"></li>`).join('')}</ul><div class="partner-pagination" aria-label="Partner carousel pages" hidden></div><span class="partner-status" role="status" aria-live="polite"></span></div></section>`;}
 function currentWork(){return `<section class="section expertise"><div class="container"><div class="section-top reveal"><div>${label('Current work')}<h2>What we’re working on.</h2></div><p>Current work areas reported by the JAL TELECOM team.</p></div><div class="values-grid">${[
  ['MIMO installation and swaps','Installing and replacing antenna and radio equipment used for multiple-input, multiple-output (MIMO) configurations.'],
  ['New RAN installations','Installing radio access network equipment for new deployments.'],
@@ -189,6 +189,7 @@ await copyFile('styles.css','dist/styles.css');
 await copyFile('app.js','dist/app.js');
 await copyFile('locale.js','dist/locale.js');
 await copyFile('language.js','dist/language.js');
+await copyFile('partners.js','dist/partners.js');
 await mkdir('dist/assets',{recursive:true});
 for(const asset of await readdir('assets-updated')){if(/\.(webp|svg)$/.test(asset)||asset==='jal-logo-approved.png')await copyFile('assets-updated/'+asset,'dist/assets/'+asset);}
 await copyFile('assets-updated/favicon.svg','dist/favicon.svg');
