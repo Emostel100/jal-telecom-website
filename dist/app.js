@@ -1,5 +1,5 @@
-import { t, photographCount, localizeValidation } from './locale.js?v=20261125-partners-r3';
-import { initPartnerCarousels } from './partners.js?v=20261125-partners-r3';
+import { t, photographCount, localizeValidation } from './locale.js?v=20261125-partners-r4';
+import { initPartnerCarousels } from './partners.js?v=20261125-partners-r4';
 
 // Progressive enhancement: core page content and contact links are static HTML.
 const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
